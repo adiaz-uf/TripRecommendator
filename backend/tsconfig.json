@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    /* File Layout: MUST be uncommented */
+    "rootDir": "./src",                       // Look for TS code in 'src/'
+    "outDir": "./dist",                       // Put compiled JS code in 'dist/'
+
+    /* Core Compatibility */
+    "target": "es2020",                       // Use a modern, stable JS version
+    "module": "commonjs",                     // Use the standard module system for Node/Express
+    "esModuleInterop": true,                  // Essential for importing CommonJS modules (like Express)
+    "resolveJsonModule": true,                // Allows importing JSON files
+
+    /* Stricter Typechecking Options */
+    "strict": true,                           // Keep all strict checks enabled (excellent choice!)
+    "skipLibCheck": true,                     // Speed up compilation by ignoring types in node_modules
+    "forceConsistentCasingInFileNames": true, // Ensure imports match filenames exactly
+    "noImplicitReturns": true,                // Catch functions that don't return a value
+    "noFallthroughCasesInSwitch": true,       // Essential for reliable logic
+    
+    /* Experimental / Modern Settings (You can remove these if they cause trouble) */
+    "moduleDetection": "auto",                // Use "auto" instead of "force"
+    "isolatedModules": true,                  // Maintain this strictness for better component isolation
+  },
+  "include": ["src/**/*"],                    // Tell TS which files to compile
+  "exclude": ["node_modules"]                 // Exclude dependency folders
+}

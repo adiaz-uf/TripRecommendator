@@ -1,0 +1,28 @@
+services:
+  # 1. Frontend Service (React + TypeScript with Vite)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/usr/src/app
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=${NODE_ENV}
+    
+  # 2. Backend Service (Node.js/Express)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./backend:/usr/src/app
+    environment:
+      - NODE_ENV=${NODE_ENV}
