@@ -15,5 +15,11 @@ re: fclean up
 logs:
 	docker compose logs -f
 
+lf:
+	docker logs frontend
+
+lb:
+	docker logs backend
+
 ps:
 	docker compose ps
