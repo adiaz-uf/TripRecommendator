@@ -13,6 +13,7 @@ services:
       - backend
     environment:
       - NODE_ENV=${NODE_ENV}
+      - VITE_BACKEND_PORT=${VITE_BACKEND_PORT}
     
   # 2. Backend Service (Node.js/Express)
   backend:
@@ -26,3 +27,5 @@ services:
       - ./backend:/usr/src/app
     environment:
       - NODE_ENV=${NODE_ENV}
+      - BACKEND_PORT=${BACKEND_PORT}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
