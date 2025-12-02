@@ -20,16 +20,6 @@ function Home() {
         setLoading(true);
         setHasSearched(true);
         const response = await getApiRecommendations(searchValue);
-        console.log('api response:', response, "api typeof", typeof response);
-        
-        
-        // Imprimir cada recomendación una a una
-        response.forEach((item: any, index: number) => {
-          console.log(`Recommendation ${index + 1}:`);
-          console.log(`  Location: ${item.locationName}`);
-          console.log(`  Description: ${item.description}`);
-          console.log(`  Coordinates: ${item.latitude}, ${item.longitude}`);
-        });
 
         setRecommendations(response);
       } catch (error) {
